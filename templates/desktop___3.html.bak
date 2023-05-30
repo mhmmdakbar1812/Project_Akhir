@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+	<title>desktop___3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/desktop___3.css') }}" type="text/css">
+	<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+	<!-- Add your custom HEAD content here -->
+
+</head>
+<body>
+	<div id="content-container">
+		<div id="_bg__desktop___3"></div>
+		<div id="rectangle_3"></div>
+		<div id="ticket_printing">
+			Deteksi Lelah
+		</div>
+		<a id="_ticket_printing_ek1_link" href="{{ url_for('capture_image') }}">
+			<div id="_ticket_printing_ek1">
+				Deteksi Lelah
+			</div>
+		</a>
+		<a id="_home_link" href="/">
+			<div id="_home">
+				Home
+			</div>
+		</a>
+		<div id="kelompok">
+			Kelompok
+		</div>
+		<div id="contact">
+			Contact
+		</div>
+		<div id="rectangle_4">
+			<img id="processed_image" src="{{ url_for('static', filename='temp/capture.jpeg') }}" alt="Processed Image">
+		</div>
+		<div id="prediction_label">
+			Hasil Prediksi:
+			<span id="prediction_text">{{ prediction }}</span>
+		</div>	
+		<script language="JavaScript">
+			var imageData = localStorage.getItem("capture");
+
+			// Check if the imageData is not null or empty
+			if (imageData) {
+				// Create an <img> element
+				var imgElement = document.createElement("img");
+
+				// Set the src attribute of the <img> element to the imageData
+				imgElement.src = imageData;
+
+				// Append the <img> element to the rectangle_4 div
+				var rectangle4Div = document.getElementById("rectangle_4");
+				rectangle4Div.appendChild(imgElement);
+			}
+			
+			$(document).ready(function() {
+			  var prediction = "{{ prediction }}";
+			  var label = getLabel(prediction);
+
+			  // Update the prediction label element
+			  var predictionLabel = document.getElementById("prediction_label");
+			  predictionLabel.innerText = "Hasil Prediksi: " + label;
+			});
+
+			function getLabel(prediction) {
+			  if (prediction === 'Open+Eyes') {
+				return "Mata Terbuka";
+			  } else if (prediction === 'Closed+Eyes') {
+				return "Mata Tertutup";
+			  } else {
+				return "Prediksi tidak valid";
+			  }
+			}
+			/*
+			function getLabel(prediction) {
+			  if (prediction === 'Open Eyes') {
+				return 'Mata Terbuka';
+			  } else {
+				return 'Mata Tertutup';
+			  }
+			}
+
+			fetch("{{ url_for('process_download') }}", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({})
+			})
+			.then(response => response.json())
+			.then(data => {
+				// Get the label from the response
+			
+			*/
+		</script>
+	</div>
+</body>
+</html>

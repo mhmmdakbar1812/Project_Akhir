@@ -1,0 +1,190 @@
+/*
+	@name desktop___1
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 1440px; width: 1440px; height: 1024px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__desktop___1 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	background:rgba(255,255,255,1);
+}
+
+
+#rectangle_2 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	background:rgba(255,255,255,0);
+	background: -webkit-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -o-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -moz-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -ms-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+}
+
+
+#rectangle_3 {
+	top: 0px;
+	left: 0px;
+	width: 1440px;
+	height: 1024px;
+	background:rgba(255,255,255,0);
+	background: -webkit-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -o-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -moz-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: -ms-linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+	background: linear-gradient(-133.37223313818deg , rgba(24.51,183.81,183.81,1) 0%, rgba(255,255,255,0.43) 100%);
+}
+
+
+#parking_ticket_printing {
+	top: 64px;
+	left: 164px;
+	width: 410px;
+	height: 70px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 32px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#_ticket_printing {
+	top: 94px;
+	left: 836px;
+	width: 164px;
+	height: 44px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#_home {
+	top: 94px;
+	left: 740px;
+	width: 85px;
+	height: 44px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#kelompok {
+	top: 94px;
+	left: 1041px;
+	width: 125px;
+	height: 44px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#contact {
+	top: 94px;
+	left: 1180px;
+	width: 107px;
+	height: 44px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#vectary_texture {
+	top: 207px;
+	left: 720px;
+	width: 569px;
+	height: 522px;
+}
+
+
+#selamat_datang {
+	top: 288px;
+	left: 164px;
+	width: 283px;
+	height: 61px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 32px;
+	font-weight: bold;
+	text-align: left;
+	color:#19AAB3;
+}
+
+
+#cetak_karcis_parkir__secara_otomatis {
+	top: 350px;
+	left: 164px;
+	width: 517px;
+	height: 150px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#cetak_karcis_anda_dengan_sistem_deteksi_plat_yang_memudahkan_pencarian_kendaraan_apabila_terjadi_hal_yang_tidak_diinginkan_seperti_kehilangan {
+	top: 489px;
+	left: 164px;
+	width: 581px;
+	height: 133px;
+	overflow: hidden;
+	font-family: Inter;
+	font-size: 24px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_1 {
+	top: 612px;
+	left: 164px;
+	width: 360px;
+	height: 86px;
+}
+
+
+#cetak_karcis {
+	top: 628px;
+	left: 218px;
+	width: 277px;
+	height: 79px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 36px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+
+/* Add your custom CSS here */
