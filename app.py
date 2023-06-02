@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import numpy as np
 from urllib.parse import unquote
 import base64
-#from flask_ngrok import run_with_ngrok
+from flask_ngrok import run_with_ngrok
 from PIL import Image
 from flask import session
 import io
@@ -13,20 +13,29 @@ import os
 
 
 app = Flask(__name__, static_url_path='/static')
-#run_with_ngrok(app)
+run_with_ngrok(app)
 app.secret_key = 'ribet_beut_sumpah'
 
 # route for home page (desktop__1)
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('desktop___1.html')
-
+    return render_template('index.html')
+    
+# route for home page (desktop__1)
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+    
+# route for home page (desktop__1)
+@app.route('/kelompok', methods=['GET'])
+def kelompok():
+    return render_template('kelompok.html')
 
 # route for capturing image (desktop__2)
 @app.route('/capture_image', methods=['GET', 'POST'])
 def capture_image():
     if request.method == 'GET':
-        return render_template('desktop___2.html')
+        return render_template('eaglesense_detect.html')
     elif request.method == 'POST':
         image_data = request.files['capture']
         # Convert the image data to base64 string
@@ -81,7 +90,7 @@ def show_result():
         prediction = 'Label tidak tersedia'
      
     # Render the template with the prediction
-    return render_template('desktop___3.html', prediction=prediction)
+    return render_template('result_predict.html', prediction=prediction)
 
 if __name__ == '__main__':
     # load the model
