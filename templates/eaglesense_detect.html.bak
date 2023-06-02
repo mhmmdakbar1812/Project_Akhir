@@ -1,0 +1,95 @@
+<html lang="en">
+          <head>
+            <meta charset="utf-8">
+          
+            <title>Html Generated</title>
+            <meta name="description" content="Figma htmlGenerator">
+            <meta name="author" content="htmlGenerator">
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Redressed&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/eaglesense_detect.css') }}">
+			<!link rel="stylesheet" href="eaglesense_detect.css">
+			<script type="text/javascript" src="{{ url_for('static', filename='webcamjs/webcam.min.js') }}"></script>
+            
+            <style>
+              /*
+                Figma Background for illustrative/preview purposes only.
+                You can remove this style tag with no consequence
+              */
+              body {background: #E5E5E5; }
+            </style>
+			<script language="JavaScript">
+			// Fungsi untuk mengambil gambar dari webcam dan mengirimkannya ke server
+			function takeSnapshot() {
+			  Webcam.snap(function(data_uri) {
+				var image_base64 = data_uri.split(',')[1]
+				downloadImage('capture', data_uri); // Mengunduh gambar dengan nama 'capture.jpeg'
+				
+				// Mengirimkan gambar ke server menggunakan permintaan AJAX
+				var formData = new FormData();
+				formData.append('capture', dataURItoBlob(data_uri), 'capture.jpeg');
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "/process_download", true);
+
+				// Menghandle respons dari server
+				xhr.onload = function() {
+				  if (xhr.status === 200) {
+					// Redirect ke halaman hasil prediks
+					var prediction = xhr.responseText;
+					localStorage.setItem("prediction", prediction);
+					window.location.href = "{{ url_for('show_result') }}";
+				  } else {
+					// Menampilkan pesan error jika terjadi kesalahan
+					console.error("Error:", xhr.responseText);
+				  }
+				};
+				xhr.send(formData);
+			  //window.location.href = "{{ url_for('show_result') }}";
+			  });
+			}
+
+			function downloadImage(name, datauri) {
+			  var a = document.createElement('a');
+			  a.setAttribute('download', name);
+			  a.setAttribute('href', datauri);
+			  a.click();
+			}
+
+			// Mengubah data URI menjadi objek Blob
+			function dataURItoBlob(dataURI) {
+			  var byteString = atob(dataURI.split(',')[1]);
+			  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+			  var ab = new ArrayBuffer(byteString.length);
+			  var ia = new Uint8Array(ab);
+			  for (var i = 0; i < byteString.length; i++) {
+				ia[i] = byteString.charCodeAt(i);
+			  }
+			  return new Blob([ab], { type: mimeString });
+			}
+		  </script>
+		  </head>          
+          <body>
+            <div class=e87_784>
+			  <div class="e87_800"></div>
+			  <div class="e87_801"></div>
+			  <a href="#" onclick="takeSnapshot(); return false;" class="e87_802"></a>
+			  <div id="my_camera"></div>
+			  <script language="JavaScript">
+				 Webcam.set({
+					 width: 347,
+					 height: 524,
+					 constraints: {
+						  width: { exact: 640 },
+						  height: { exact: 480 }
+						},
+					 image_format: 'jpeg',
+					 jpeg_quality: 90
+				 });
+				 Webcam.attach('#my_camera');
+			 </script>
+			  <div id="kuning"></div>
+			  <div class=e87_839><a href="/" class="e87_840">Home</a><a href="{{ url_for('capture_image') }}"  class="e87_841">EagleSense  Detect</a><a href="{{ url_for('about') }}"  class="e87_842">About</a><a href="{{ url_for('kelompok') }}" class="e87_843">Kelompok</a></div><span  class="e87_886">EagleSense Detect</span>
+			  <div class="e87_895"></div>
+			</div>
+          </body>
+          </html>

@@ -1,0 +1,78 @@
+<html lang="en">
+          <head>
+            <meta charset="utf-8">
+          
+            <title>Html Generated</title>
+            <meta name="description" content="Figma htmlGenerator">
+            <meta name="author" content="htmlGenerator">
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Redressed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="styles.css">
+            
+            <style>
+            .e90_17 { 
+				width:39.837398529052734px;
+				height:40px;
+				position:absolute;
+				left:209px;
+				top:42px;
+				background-image:url("{{ url_for('static', filename='images/image_2.png') }}");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+			.e91_3 { 
+				width:89.83333587646484px;
+				height:120px;
+				position:absolute;
+				left:24px;
+				top:12px;
+				background-image:url("{{ url_for('static', filename='images/whatsapp_image_2023_05_30_at_21_05_1.png') }}");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+			.e91_7 { 
+				width:120px;
+				height:120px;
+				position:absolute;
+				left:11px;
+				top:12px;
+				background-image:url("{{ url_for('static', filename='images/image_3.png') }}");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+			.e91_5 { 
+				width:120.2226333618164px;
+				height:120px;
+				position:absolute;
+				left:11px;
+				top:12px;
+				background-image:url("{{ url_for('static', filename='images/whatsapp_image_2023_05_31_at_11_41_1.png') }}");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+            </style>
+          
+          </head>
+          
+          <body>
+            <div class=e90_2>
+			  <div class="e90_3"></div>
+			  <div class=e90_8><a href="/"  class="e90_9">Home</a><a href="{{ url_for('capture_image') }}"  class="e90_10">EagleSense  Detect</a><a href="{{ url_for('about') }}"  class="e90_11">About</a><a href="{{ url_for('kelompok') }}"  class="e90_12">Kelompok</a></div>
+			  <div class=e90_13>
+				<div class="e90_14"></div><span  class="e90_15">Home</span><a href="/"  class="e90_16">Kembali Ke Home</a>
+				<div class="e90_17"></div>
+			  </div><span  class="e90_18">Kelompok</span>
+			  <div class=e90_27><span  class="e90_4">Muhammad Akbar  Ramadhan</span><span  class="e90_5">3332200108</span><span  class="e90_6">Universitas Sultan Ageng Tirtayasa</span><span  class="e90_25">Muhammad Akbar  Ramadhan</span>
+				<div class="e91_3"></div>
+			  </div>
+			  <div class=e90_28><span  class="e90_29">Ni’am  Nur Khasanah</span><span  class="e90_30">5302420060</span><span  class="e90_31">Universitas Negeri Semarang</span>
+				<div class="e91_7"></div>
+			  </div>
+			  <div class=e90_35><span  class="e90_36">Helmy  Tsaqiffito</span><span  class="e90_37">4611420086</span><span  class="e90_38">Universitas Negeri Semarang</span>
+				<div class="e91_5"></div>
+			  </div>
+			</div>
+          </body>
+          </html>

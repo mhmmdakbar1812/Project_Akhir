@@ -1,0 +1,64 @@
+<html lang="en">
+          <head>
+            <meta charset="utf-8">
+          
+            <title>Html Generated</title>
+            <meta name="description" content="Figma htmlGenerator">
+            <meta name="author" content="htmlGenerator">
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Redressed&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/result_predict.css') }}">
+            <!link rel="stylesheet" href="result_predict.css">
+            <style>
+            .e96_9 { 
+				width:21px;
+				height:18px;
+				position:absolute;
+				left:19.5px;
+				top:21px;
+				background-image:url("{{ url_for('static', filename='images/___1.png') }}");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+            </style>
+			<script language="JavaScript">
+			var imageData = localStorage.getItem("capture");
+
+			// Check if the imageData is not null or empty
+			if (imageData) {
+				// Create an <img> element
+				var imgElement = document.createElement("img");
+
+				// Set the src attribute of the <img> element to the imageData
+				imgElement.src = imageData;
+
+				// Append the <img> element to the rectangle_4 div
+				var rectangle4Div = document.getElementById("rectangle_4");
+				rectangle4Div.appendChild(imgElement);
+			}
+			
+			$(document).ready(function() {
+			  var prediction = "{{ prediction }}";
+			  var label = getLabel(prediction);
+
+			  // Update the prediction label element
+			  var predictionLabel = document.getElementById("prediction_label");
+			  predictionLabel.innerText = "Hasil Prediksi: " + label;
+			});
+		</script>
+          </head>
+          <body>
+            <div class=e87_844>
+			  <a href="{{ url_for('capture_image') }}" class="e87_845">
+				<div class="e96_9"></div>
+			  </a>
+			  <div class="e87_847"></div>
+			  <div class="e87_848"></div>
+			  <div id="rectangle_4"><img id="processed_image" src="{{ url_for('static', filename='temp/capture.jpeg') }}" alt="Processed Image"></div>
+			  <div id="prediction_label">Hasil Prediksi: 
+			  <span id="prediction_text">{{ prediction }}</span></div>
+			  <div class=e87_852><a href="/" class="e87_853">Home</a><a href="{{ url_for('capture_image') }}" class="e87_854">EagleSense  Detect</a><a href="{{ url_for('about') }}" class="e87_855">About</a><a href="{{ url_for('kelompok') }}"  class="e87_856">Kelompok</a></div><span  class="e87_887">Result and Predict</span>
+			  <div class="e87_894"></div>
+			</div>
+          </body>
+          </html>
