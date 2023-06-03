@@ -81,9 +81,9 @@ def show_result():
     print(label)
     if label:
         if label == 'Open Eyes':
-            prediction = 'Mata Terbuka'
+            prediction = 'Anda segar bugar tetap jalani aktivitas dan tetap produktif, namun tetap jaga kesehatan'
         elif label == 'Closed Eyes':
-            prediction = 'Mata Tertutup'
+            prediction = 'Anda Kelelahan Istirahatkan tubuh anda di rest area agar tidak terjadi hal yang tidak diinginkan'
         else:
             prediction = 'Prediksi tidak valid'
     else:
